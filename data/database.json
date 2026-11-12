@@ -1,0 +1,1757 @@
+{
+  "users": [
+    {
+      "id": "admin-1",
+      "name": "Mr. Pirate",
+      "email": "Mr-Pirate",
+      "phone": "+1 (800) 747-2831",
+      "role": "admin",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "status": "active",
+      "verified": true,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "walletBalance": 24850.5,
+      "rating": 5,
+      "totalJobs": 1420,
+      "walletAddress": "0x61646d696e2d314d722d50697261746500000000"
+    },
+    {
+      "id": "cust-1",
+      "name": "Alex Rivera",
+      "email": "alex.rivera@example.com",
+      "phone": "+1 (415) 890-1234",
+      "role": "customer",
+      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+      "status": "active",
+      "verified": true,
+      "location": {
+        "lat": 37.7749,
+        "lng": -122.4194,
+        "address": "742 Market St, Financial District, San Francisco, CA"
+      },
+      "createdAt": "2024-02-15T10:30:00.000Z",
+      "walletBalance": 0,
+      "walletAddress": "0x71c8901234ef0192834019283401928340192834",
+      "rating": 4.9,
+      "totalJobs": 14
+    },
+    {
+      "id": "prov-1",
+      "name": "Marcus Vance",
+      "email": "marcus.vance@servexapro.com",
+      "phone": "+1 (415) 555-0199",
+      "role": "provider",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "status": "active",
+      "verified": true,
+      "businessName": "Apex Mobility & Express Delivery",
+      "location": {
+        "lat": 37.7785,
+        "lng": -122.412,
+        "address": "Mission St & 4th, San Francisco, CA"
+      },
+      "createdAt": "2024-01-10T08:00:00.000Z",
+      "walletBalance": 1450.8,
+      "rating": 4.96,
+      "totalJobs": 384,
+      "walletAddress": "0x70726f762d316d61726375732e76616e63654073"
+    },
+    {
+      "id": "prov-2",
+      "name": "Elena Rostova",
+      "email": "elena.rostova@servexapro.com",
+      "phone": "+1 (415) 555-0248",
+      "role": "provider",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
+      "status": "active",
+      "verified": true,
+      "businessName": "Tesla Master Electric & Solar",
+      "location": {
+        "lat": 37.765,
+        "lng": -122.428,
+        "address": "Castro & Market, San Francisco, CA"
+      },
+      "createdAt": "2024-01-12T09:15:00.000Z",
+      "walletBalance": 3120,
+      "rating": 4.98,
+      "totalJobs": 290,
+      "walletAddress": "0x70726f762d32656c656e612e726f73746f766140"
+    },
+    {
+      "id": "prov-3",
+      "name": "David Thorne",
+      "email": "david.thorne@servexapro.com",
+      "phone": "+1 (415) 555-0371",
+      "role": "provider",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+      "status": "active",
+      "verified": true,
+      "businessName": "Thorne 24/7 Rapid Hydro Plumbing",
+      "location": {
+        "lat": 37.789,
+        "lng": -122.401,
+        "address": "North Beach Pier 39, San Francisco, CA"
+      },
+      "createdAt": "2024-01-18T11:00:00.000Z",
+      "walletBalance": 2780.4,
+      "rating": 4.92,
+      "totalJobs": 412,
+      "walletAddress": "0x70726f762d3364617669642e74686f726e654073"
+    },
+    {
+      "id": "prov-4",
+      "name": "Sarah Lindqvist",
+      "email": "sarah.lindqvist@servexapro.com",
+      "phone": "+1 (415) 555-0822",
+      "role": "provider",
+      "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+      "status": "active",
+      "verified": true,
+      "businessName": "Luxe EcoClean & Sanitization",
+      "location": {
+        "lat": 37.758,
+        "lng": -122.415,
+        "address": "Valencia & 20th St, San Francisco, CA"
+      },
+      "createdAt": "2024-02-01T14:20:00.000Z",
+      "walletBalance": 1890.25,
+      "rating": 4.95,
+      "totalJobs": 215,
+      "walletAddress": "0x70726f762d3473617261682e6c696e6471766973"
+    },
+    {
+      "id": "prov-5",
+      "name": "Mateo Ortiz",
+      "email": "mateo.ortiz@servexapro.com",
+      "phone": "+1 (415) 555-0954",
+      "role": "provider",
+      "avatar": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80",
+      "status": "active",
+      "verified": true,
+      "businessName": "Artisan Finish Painters & Drywall",
+      "location": {
+        "lat": 37.781,
+        "lng": -122.445,
+        "address": "Geary Blvd & Presidio, San Francisco, CA"
+      },
+      "createdAt": "2024-02-05T12:00:00.000Z",
+      "walletBalance": 2240,
+      "rating": 4.89,
+      "totalJobs": 178,
+      "walletAddress": "0x70726f762d356d6174656f2e6f7274697a407365"
+    },
+    {
+      "id": "prov-6",
+      "name": "Chef Mario Rossi",
+      "email": "mario.rossi@chefservexa.com",
+      "phone": "+1 (415) 555-7821",
+      "role": "provider",
+      "avatar": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=150&auto=format&fit=crop&q=80",
+      "status": "active",
+      "verified": true,
+      "emailVerified": true,
+      "businessName": "Trattoria & Gourmet Catering by Chef Mario",
+      "location": {
+        "lat": 37.798,
+        "lng": -122.407,
+        "address": "Columbus Ave & Broadway, North Beach, San Francisco, CA"
+      },
+      "createdAt": "2024-02-08T10:00:00.000Z",
+      "walletBalance": 3450,
+      "rating": 4.97,
+      "totalJobs": 240,
+      "walletAddress": "0x70726f762d366d6172696f2e726f737369406368"
+    },
+    {
+      "id": "prov-7",
+      "name": "Dr. Aris Vance, MD",
+      "email": "dr.aris.vance@servexamedia.com",
+      "phone": "+1 (415) 555-9912",
+      "role": "provider",
+      "avatar": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=150&auto=format&fit=crop&q=80",
+      "status": "active",
+      "verified": true,
+      "emailVerified": true,
+      "businessName": "Bay Area Mobile Urgent Care & Concierge MD",
+      "location": {
+        "lat": 37.79,
+        "lng": -122.435,
+        "address": "Pacific Heights & Fillmore St, San Francisco, CA"
+      },
+      "createdAt": "2024-01-20T08:30:00.000Z",
+      "walletBalance": 5120,
+      "rating": 4.99,
+      "totalJobs": 310,
+      "walletAddress": "0x70726f762d3764722e617269732e76616e636540"
+    },
+    {
+      "id": "cust-1791099908648",
+      "name": "Foxy Luna",
+      "email": "lunafoxy12@gmail.com",
+      "phone": "+1 (555) 019-2834",
+      "role": "customer",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLwMemBz1MYtljq7wjRwvXSuOdBmTUmbCyefW6VHuhReBha6Q=s96-c",
+      "status": "active",
+      "verified": true,
+      "emailVerified": true,
+      "createdAt": "2026-10-04T07:45:08.648Z",
+      "walletBalance": 0,
+      "rating": 5,
+      "totalJobs": 0,
+      "walletAddress": "0x637573742d313739313039393930383634386c75"
+    },
+    {
+      "id": "cust-1791102041067",
+      "name": "Test Customer",
+      "email": "test_cust_no_otp@example.com",
+      "phone": "+15551234567",
+      "role": "customer",
+      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+      "status": "active",
+      "verified": true,
+      "emailVerified": true,
+      "createdAt": "2026-10-04T08:20:41.067Z",
+      "walletBalance": 0,
+      "walletAddress": "0x637573742d313739313130323034313036377465",
+      "rating": 5,
+      "totalJobs": 0,
+      "businessName": "Test Customer",
+      "agreedToTerms": true,
+      "agreedAt": "2026-10-04T08:20:41.067Z",
+      "agreementVersion": "v1.4.0"
+    },
+    {
+      "id": "prov-1791102044802",
+      "name": "Alex Electrician",
+      "email": "alex_spark@example.com",
+      "phone": "+15559876543",
+      "role": "provider",
+      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+      "status": "active",
+      "verified": true,
+      "emailVerified": true,
+      "createdAt": "2026-10-04T08:20:44.802Z",
+      "walletBalance": 0,
+      "walletAddress": "0x70726f762d31373931313032303434383032616c",
+      "rating": 5,
+      "totalJobs": 0,
+      "businessName": "Alex Electrical Pro",
+      "categoryId": "cat-electrician",
+      "agreedToTerms": true,
+      "agreedAt": "2026-10-04T08:20:44.802Z",
+      "agreementVersion": "v1.4.0"
+    }
+  ],
+  "providers": [
+    {
+      "userId": "prov-1",
+      "handle": "marcus-apex",
+      "businessName": "Apex Mobility & Express Delivery",
+      "category": "cat-taxi",
+      "subcategories": [
+        "Standard City Ride",
+        "Airport Express Transfer",
+        "Express Bike / Moto"
+      ],
+      "bio": "Licensed commercial chauffeur and priority courier with 8+ years on the road. Clean Mercedes electric SUV and heavy-duty cargo bike fleet. 100% on-time guarantee.",
+      "serviceArea": "Greater San Francisco Bay Area & SFO Airport",
+      "workingHours": "24/7 On Demand",
+      "rating": 4.96,
+      "reviewCount": 142,
+      "completedJobs": 384,
+      "isVerified": true,
+      "activeStatus": "online",
+      "currentLocation": {
+        "lat": 37.7785,
+        "lng": -122.412,
+        "address": "Mission St & 4th, San Francisco, CA"
+      },
+      "heading": 45,
+      "hourlyRate": 50,
+      "services": [
+        {
+          "id": "srv-101",
+          "name": "Executive City Ride (Sedan / EV)",
+          "categoryId": "cat-taxi",
+          "price": 3.2,
+          "priceType": "km",
+          "durationMinutes": 20,
+          "description": "Smooth, quiet ride in a luxury electric vehicle. Bottled water, phone chargers & route choice included."
+        },
+        {
+          "id": "srv-102",
+          "name": "SFO International Airport Transfer",
+          "categoryId": "cat-taxi",
+          "price": 65,
+          "priceType": "fixed",
+          "durationMinutes": 35,
+          "description": "Fixed-fare curb-to-terminal airport drop-off with luggage assistance and flight tracking."
+        },
+        {
+          "id": "srv-103",
+          "name": "Same-Hour Express Document / Parcel Courier",
+          "categoryId": "cat-delivery",
+          "price": 24,
+          "priceType": "fixed",
+          "durationMinutes": 40,
+          "description": "Direct door-to-door hand delivery for legal contracts, medical items, and sensitive parcels."
+        }
+      ],
+      "posts": [
+        {
+          "id": "post-101",
+          "providerId": "prov-1",
+          "title": "Morning Airport Run in the Mercedes EQE",
+          "description": "Smooth sunrise run down to SFO. Zero traffic and ready for passenger pickups!",
+          "mediaType": "image",
+          "mediaUrl": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&auto=format&fit=crop&q=80",
+          "likes": 84,
+          "serviceCategory": "Taxi & Rides",
+          "createdAt": "2024-09-14T07:15:00.000Z"
+        },
+        {
+          "id": "post-102",
+          "providerId": "prov-1",
+          "title": "Rush-Hour Document Courier Mission",
+          "description": "Delivered legal briefs across downtown in under 22 minutes safely.",
+          "mediaType": "image",
+          "mediaUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80",
+          "likes": 56,
+          "serviceCategory": "Courier & Delivery",
+          "createdAt": "2024-09-12T14:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "userId": "prov-2",
+      "handle": "elena-electric",
+      "businessName": "Tesla Master Electric & Solar",
+      "category": "cat-electrician",
+      "subcategories": [
+        "Circuit Short Diagnosis",
+        "EV Charger Level 2 Install",
+        "Smart Home & Architectural Lighting"
+      ],
+      "bio": "State-certified Master Electrician with 12 years field experience. Specializing in high-amperage EV charger setups, 200A main service panel upgrades, and smart automation.",
+      "serviceArea": "San Francisco, Oakland, Berkeley & Marin",
+      "workingHours": "Mon - Sat: 07:00 AM - 07:00 PM (Emergency 24/7)",
+      "rating": 4.98,
+      "reviewCount": 98,
+      "completedJobs": 290,
+      "isVerified": true,
+      "activeStatus": "online",
+      "currentLocation": {
+        "lat": 37.765,
+        "lng": -122.428,
+        "address": "Castro & Market, San Francisco, CA"
+      },
+      "heading": 90,
+      "hourlyRate": 95,
+      "services": [
+        {
+          "id": "srv-201",
+          "name": "EV Charger Level 2 Hardwired Installation",
+          "categoryId": "cat-electrician",
+          "price": 349,
+          "priceType": "fixed",
+          "durationMinutes": 180,
+          "description": "Complete 240V dedicated 50A/60A circuit install for Tesla Wall Connector, ChargePoint, or JuiceBox."
+        },
+        {
+          "id": "srv-202",
+          "name": "Electrical Diagnostics & Breaker Tripping Fix",
+          "categoryId": "cat-electrician",
+          "price": 95,
+          "priceType": "hourly",
+          "durationMinutes": 60,
+          "description": "Thermal camera breaker box inspection, arc-fault diagnosis, and grounding verification."
+        },
+        {
+          "id": "srv-203",
+          "name": "Smart Recessed Lighting & Lutron Dimmer Setup",
+          "categoryId": "cat-electrician",
+          "price": 180,
+          "priceType": "fixed",
+          "durationMinutes": 120,
+          "description": "Ultra-thin LED wafer retrofit with smart app / voice control integration."
+        }
+      ],
+      "posts": [
+        {
+          "id": "post-201",
+          "providerId": "prov-2",
+          "title": "Installed Tesla Universal Charger with 60A breaker",
+          "description": "Clean conduit routing and verified 11.5 kW output. Zero voltage drop over 45ft run!",
+          "mediaType": "image",
+          "mediaUrl": "https://images.unsplash.com/photo-1558441719-8b489c63f7d1?w=800&auto=format&fit=crop&q=80",
+          "likes": 128,
+          "serviceCategory": "Electrician & Power",
+          "createdAt": "2024-09-15T11:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "userId": "prov-3",
+      "handle": "thorne-plumbing",
+      "businessName": "Thorne 24/7 Rapid Hydro Plumbing",
+      "category": "cat-plumbing",
+      "subcategories": [
+        "Emergency Pipe Leak Repair",
+        "Drain & Sewer Jetting",
+        "Faucet & Fixture Installation"
+      ],
+      "bio": "Licensed plumbing contractor #981244. High-pressure hydro-jetting, trenchless sewer camera diagnostics, tankless water heater maintenance. Rapid 30-minute dispatch.",
+      "serviceArea": "San Francisco Peninsula & South Bay",
+      "workingHours": "24 Hours / 7 Days a Week",
+      "rating": 4.92,
+      "reviewCount": 167,
+      "completedJobs": 412,
+      "isVerified": true,
+      "activeStatus": "online",
+      "currentLocation": {
+        "lat": 37.789,
+        "lng": -122.401,
+        "address": "North Beach Pier 39, San Francisco, CA"
+      },
+      "heading": 180,
+      "hourlyRate": 85,
+      "services": [
+        {
+          "id": "srv-301",
+          "name": "Emergency Burst Pipe / Leak Isolation & Repair",
+          "categoryId": "cat-plumbing",
+          "price": 130,
+          "priceType": "fixed",
+          "durationMinutes": 90,
+          "description": "Fast arrival with copper crimp and PEX fittings to stop flooding immediately."
+        },
+        {
+          "id": "srv-302",
+          "name": "Hydro-Jet Main Sewer Drain Clearing",
+          "categoryId": "cat-plumbing",
+          "price": 195,
+          "priceType": "fixed",
+          "durationMinutes": 120,
+          "description": "4000 PSI hydro-jetting removes heavy grease, roots, and blockages with full video inspection."
+        }
+      ],
+      "posts": [
+        {
+          "id": "post-301",
+          "providerId": "prov-3",
+          "title": "Cast-iron main drain restoration completed today",
+          "description": "Replaced cracked 4-inch main line under a Victorian sub-floor with zero structural damage.",
+          "mediaType": "image",
+          "mediaUrl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&auto=format&fit=crop&q=80",
+          "likes": 92,
+          "serviceCategory": "Plumbing Services",
+          "createdAt": "2024-09-13T16:40:00.000Z"
+        }
+      ]
+    },
+    {
+      "userId": "prov-4",
+      "handle": "luxe-ecoclean",
+      "businessName": "Luxe EcoClean & Sanitization",
+      "category": "cat-cleaners",
+      "subcategories": [
+        "Whole Home Deep Clean",
+        "Move-in / Move-out Turnaround",
+        "Steam Carpet & Upholstery"
+      ],
+      "bio": "Hospital-grade, 100% plant-based and pet-safe cleaning. HEPA filtered vacuums, steam sanitization, and meticulous attention to baseboards, ovens, and tile grout.",
+      "serviceArea": "San Francisco Metro",
+      "workingHours": "Mon - Sun: 08:00 AM - 06:00 PM",
+      "rating": 4.95,
+      "reviewCount": 88,
+      "completedJobs": 215,
+      "isVerified": true,
+      "activeStatus": "online",
+      "currentLocation": {
+        "lat": 37.758,
+        "lng": -122.415,
+        "address": "Valencia & 20th St, San Francisco, CA"
+      },
+      "hourlyRate": 50,
+      "services": [
+        {
+          "id": "srv-401",
+          "name": "Comprehensive 2-Bedroom Deep Sanitization",
+          "categoryId": "cat-cleaners",
+          "price": 160,
+          "priceType": "fixed",
+          "durationMinutes": 210,
+          "description": "Kitchen appliances, interior windows, sanitized bathrooms, polished fixtures, and allergen removal."
+        }
+      ],
+      "posts": [
+        {
+          "id": "post-401",
+          "providerId": "prov-4",
+          "title": "Modern Loft Move-Out Transformation",
+          "description": "Turned a dusty post-tenancy loft into sparkling move-in condition. Landlord approved 100% security deposit back!",
+          "mediaType": "image",
+          "mediaUrl": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&auto=format&fit=crop&q=80",
+          "likes": 114,
+          "serviceCategory": "Cleaning & Maid",
+          "createdAt": "2024-09-14T18:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "userId": "prov-5",
+      "handle": "artisan-painters",
+      "businessName": "Artisan Finish Painters & Drywall",
+      "category": "cat-painters",
+      "subcategories": [
+        "Interior Room Painting",
+        "Kitchen Cabinet Refinishing",
+        "Exterior Weatherproof Coating"
+      ],
+      "bio": "Expert architectural painters specializing in dustless sanding, Benjamin Moore premium finishes, and flawless drywall skimming.",
+      "serviceArea": "San Francisco & Marin County",
+      "workingHours": "Mon - Fri: 08:00 AM - 05:00 PM",
+      "rating": 4.89,
+      "reviewCount": 65,
+      "completedJobs": 178,
+      "isVerified": true,
+      "activeStatus": "online",
+      "currentLocation": {
+        "lat": 37.781,
+        "lng": -122.445,
+        "address": "Geary Blvd & Presidio, San Francisco, CA"
+      },
+      "hourlyRate": 65,
+      "services": [
+        {
+          "id": "srv-501",
+          "name": "Single Room Accent & Ceiling Painting",
+          "categoryId": "cat-painters",
+          "price": 220,
+          "priceType": "fixed",
+          "durationMinutes": 240,
+          "description": "Includes tape masking, minor nail hole spackle, 2 coats of premium eggshell/matte paint."
+        }
+      ],
+      "posts": [
+        {
+          "id": "post-501",
+          "providerId": "prov-5",
+          "title": "Matte Sage Accent Wall Finish",
+          "description": "Crisp razor-sharp lines and satin sheen on living room architectural fireplace surround.",
+          "mediaType": "image",
+          "mediaUrl": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&auto=format&fit=crop&q=80",
+          "likes": 73,
+          "serviceCategory": "Painting & Drywall",
+          "createdAt": "2024-09-11T15:00:00.000Z"
+        }
+      ],
+      "storefront": {
+        "enabled": true,
+        "subdomain": "artisan-finish",
+        "storeName": "Artisan Finish Painters & Drywall",
+        "tagline": "Architectural finishes, dustless sanding, and modern interior painting",
+        "bio": "Boutique residential painting studio transforming San Francisco & Marin residences.",
+        "bannerUrl": "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&auto=format&fit=crop&q=80",
+        "logoUrl": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80",
+        "contactPhone": "+14155550954",
+        "subscriptionActive": true,
+        "monthlyFee": 5,
+        "subscriptionRenewsAt": "2025-01-01T00:00:00.000Z",
+        "analytics": {
+          "views": 184,
+          "orders": 19,
+          "revenue": 4180
+        }
+      }
+    },
+    {
+      "userId": "prov-6",
+      "handle": "chef-mario",
+      "businessName": "Trattoria & Gourmet Catering by Chef Mario",
+      "category": "cat-food",
+      "subcategories": [
+        "Restaurant Takeaway & Delivery",
+        "Private Chef & In-Home Dining",
+        "Gourmet Catering & Parties"
+      ],
+      "bio": "Executive Chef Mario Rossi trained in Florence and Bologna. Offering bespoke multi-course in-home dining, handmade pasta tasting menus, and corporate event catering.",
+      "serviceArea": "San Francisco, Peninsula, Marin & Silicon Valley",
+      "workingHours": "Tue - Sun: 11:00 AM - 10:00 PM",
+      "rating": 4.97,
+      "reviewCount": 184,
+      "completedJobs": 240,
+      "isVerified": true,
+      "activeStatus": "online",
+      "currentLocation": {
+        "lat": 37.798,
+        "lng": -122.407,
+        "address": "Columbus Ave & Broadway, North Beach, San Francisco, CA"
+      },
+      "heading": 120,
+      "hourlyRate": 85,
+      "storefront": {
+        "enabled": true,
+        "subdomain": "chef-mario",
+        "storeName": "Chef Mario Rossi Trattoria & Private Dining",
+        "tagline": "Artisan handmade pastas, Roman-style pizzas & in-home dining experiences",
+        "bio": "Michelin-experienced chef creating unforgettable culinary evenings in your kitchen or delivering hot chef-curated meals.",
+        "bannerUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&auto=format&fit=crop&q=80",
+        "logoUrl": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=150&auto=format&fit=crop&q=80",
+        "contactPhone": "+14155557821",
+        "subscriptionActive": true,
+        "monthlyFee": 5,
+        "subscriptionRenewsAt": "2025-01-01T00:00:00.000Z",
+        "analytics": {
+          "views": 420,
+          "orders": 58,
+          "revenue": 5320
+        }
+      },
+      "services": [
+        {
+          "id": "srv-601",
+          "name": "4-Course Private In-Home Chef Tasting Menu",
+          "categoryId": "cat-food",
+          "price": 145,
+          "priceType": "fixed",
+          "durationMinutes": 180,
+          "description": "Chef brings farm-fresh ingredients, prepares a 4-course Italian dinner in your home kitchen, and leaves it spotless."
+        },
+        {
+          "id": "srv-602",
+          "name": "Truffle Tagliolini & Woodfired Porcini Meal Kit (Hot)",
+          "categoryId": "cat-food",
+          "price": 38,
+          "priceType": "fixed",
+          "durationMinutes": 35,
+          "description": "Fresh hand-extruded tagliolini with Umbrian black truffle cream, wild porcini mushrooms, and Parmigiano Reggiano 24-month."
+        },
+        {
+          "id": "srv-603",
+          "name": "Gourmet Antipasti & Artisan Focaccia Board (Serves 6)",
+          "categoryId": "cat-food",
+          "price": 65,
+          "priceType": "fixed",
+          "durationMinutes": 45,
+          "description": "Prosciutto di Parma, burrata pugliese, marinated artichokes, Castelvetrano olives, rosemary sea salt focaccia."
+        }
+      ],
+      "posts": [
+        {
+          "id": "post-601",
+          "providerId": "prov-6",
+          "title": "Handmade Tagliatelle with Slow-Cooked Bolognese Ragu",
+          "description": "12-hour braised chuck roast and pancetta over fresh egg pasta ribbons for private dinner party.",
+          "mediaType": "image",
+          "mediaUrl": "https://images.unsplash.com/photo-1621996346565-e3d5d6281691?w=800&auto=format&fit=crop&q=80",
+          "likes": 192,
+          "serviceCategory": "Food & Restaurants",
+          "createdAt": "2024-09-14T20:15:00.000Z"
+        }
+      ]
+    },
+    {
+      "userId": "prov-7",
+      "handle": "dr-vance",
+      "businessName": "Bay Area Mobile Urgent Care & Concierge MD",
+      "category": "cat-doctor",
+      "subcategories": [
+        "Urgent Doctor Home Visit",
+        "Telehealth HD Video Consultation",
+        "Mobile Nurse & IV Therapy"
+      ],
+      "bio": "Board-Certified Internal & Emergency Medicine Physician (Stanford-trained). Providing immediate bedside urgent care, acute injury care, prescription refills, and advanced diagnostics at your home or office.",
+      "serviceArea": "San Francisco, Peninsula, East Bay & SFO Region",
+      "workingHours": "24/7 Rapid Emergency Dispatch",
+      "rating": 4.99,
+      "reviewCount": 215,
+      "completedJobs": 310,
+      "isVerified": true,
+      "activeStatus": "online",
+      "currentLocation": {
+        "lat": 37.79,
+        "lng": -122.435,
+        "address": "Pacific Heights & Fillmore St, San Francisco, CA"
+      },
+      "heading": 260,
+      "hourlyRate": 150,
+      "storefront": {
+        "enabled": true,
+        "subdomain": "dr-vance",
+        "storeName": "Dr. Aris Vance Concierge Medicine",
+        "tagline": "Board-certified urgent medical doctor home visits & telehealth in 30 mins",
+        "bio": "Fast, confidential medical care brought directly to you. Avoid busy waiting rooms with direct physician home dispatch.",
+        "bannerUrl": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop&q=80",
+        "logoUrl": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=150&auto=format&fit=crop&q=80",
+        "contactPhone": "+14155559912",
+        "subscriptionActive": true,
+        "monthlyFee": 5,
+        "subscriptionRenewsAt": "2025-01-01T00:00:00.000Z",
+        "analytics": {
+          "views": 630,
+          "orders": 74,
+          "revenue": 11840
+        }
+      },
+      "services": [
+        {
+          "id": "srv-701",
+          "name": "Urgent Physician Home Visit & Diagnostic Exam",
+          "categoryId": "cat-doctor",
+          "price": 185,
+          "priceType": "fixed",
+          "durationMinutes": 60,
+          "description": "Comprehensive physical examination, vitals check, strep/flu/COVID rapid swab, prescription dispensation, and care plan."
+        },
+        {
+          "id": "srv-702",
+          "name": "Urgent Telehealth HD Video Consultation (30 mins)",
+          "categoryId": "cat-doctor",
+          "price": 65,
+          "priceType": "fixed",
+          "durationMinutes": 30,
+          "description": "Immediate video consultation with Dr. Vance. Diagnosis, medication review, and pharmacy e-prescriptions sent in 15 mins."
+        },
+        {
+          "id": "srv-703",
+          "name": "Mobile Myers Cocktail & Immune Boost IV Infusion",
+          "categoryId": "cat-doctor",
+          "price": 140,
+          "priceType": "fixed",
+          "durationMinutes": 45,
+          "description": "Electrolyte rehydration with High-Dose Vitamin C, B-Complex, Zinc, and Magnesium administered by registered clinical nurse."
+        }
+      ],
+      "posts": [
+        {
+          "id": "post-701",
+          "providerId": "prov-7",
+          "title": "Mobile Diagnostics Unit Ready for Home Urgent Calls",
+          "description": "Equipped with portable ultrasound, 12-lead EKG, and point-of-care rapid blood analysis for zero wait-time care.",
+          "mediaType": "image",
+          "mediaUrl": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=800&auto=format&fit=crop&q=80",
+          "likes": 248,
+          "serviceCategory": "Doctors & Healthcare",
+          "createdAt": "2024-09-15T09:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "userId": "prov-1791102044802",
+      "handle": "alex-electrician",
+      "businessName": "Alex Electrical Pro",
+      "category": "cat-electrician",
+      "subcategories": [
+        "Standard Service"
+      ],
+      "bio": "Professional verified service provider on Servexa AI.",
+      "serviceArea": "San Francisco Bay Area",
+      "workingHours": "Mon - Sat: 8:00 AM - 6:00 PM",
+      "rating": 5,
+      "reviewCount": 0,
+      "completedJobs": 0,
+      "isVerified": true,
+      "activeStatus": "online",
+      "currentLocation": {
+        "lat": 37.78828323236715,
+        "lng": -122.41493134106062,
+        "address": "San Francisco, CA"
+      },
+      "storefront": {
+        "enabled": true,
+        "subdomain": "alex-electrician",
+        "storeName": "Alex Electrical Pro",
+        "tagline": "Professional on-demand services with direct booking, private encrypted communication & live GPS tracking",
+        "bio": "Welcome to our official direct store. Book services directly or initiate direct consultation.",
+        "contactPhone": "+15559876543",
+        "contactEmail": "alex_spark@example.com",
+        "subscriptionActive": false,
+        "monthlyFee": 5,
+        "analytics": {
+          "views": 0,
+          "orders": 0,
+          "revenue": 0
+        }
+      },
+      "services": [
+        {
+          "id": "srv-1791102044803",
+          "name": "Standard Consultation / Service Call",
+          "categoryId": "cat-electrician",
+          "price": 75,
+          "priceType": "fixed",
+          "durationMinutes": 60,
+          "description": "Comprehensive inspection, diagnosis, and service execution."
+        }
+      ],
+      "posts": []
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-electrician",
+      "name": "Electrician & Power",
+      "slug": "electrician",
+      "icon": "Zap",
+      "characterImage": "/src/assets/images/electrician_character_1790070985996.jpg",
+      "characterAction": "Diagnosing circuit breakers & testing live voltage",
+      "characterWorkplace": "Electrical Breaker Panel & Multimeter",
+      "description": "Panel upgrades, lighting, wiring repairs, breaker diagnostics and EV charger setup",
+      "pricingModels": [
+        "hourly",
+        "fixed"
+      ],
+      "basePrice": 75,
+      "subcategories": [
+        {
+          "id": "sub-short",
+          "name": "Circuit Short Diagnosis"
+        },
+        {
+          "id": "sub-ev",
+          "name": "EV Charger Level 2 Install"
+        },
+        {
+          "id": "sub-lighting",
+          "name": "Smart Home & Architectural Lighting"
+        }
+      ],
+      "enabled": true,
+      "order": 1
+    },
+    {
+      "id": "cat-plumbing",
+      "name": "Plumbing Services",
+      "slug": "plumbing",
+      "icon": "Wrench",
+      "characterImage": "/src/assets/images/plumber_character_1790070961838.jpg",
+      "characterAction": "Tightening copper pipes & stopping high-pressure leaks",
+      "characterWorkplace": "Water Mains & Pipe Wrench",
+      "description": "Emergency leak repair, pipe unclogging, water heater installation & inspections",
+      "pricingModels": [
+        "hourly",
+        "fixed",
+        "quote"
+      ],
+      "basePrice": 65,
+      "subcategories": [
+        {
+          "id": "sub-leak",
+          "name": "Emergency Pipe Leak Repair"
+        },
+        {
+          "id": "sub-drain",
+          "name": "Drain & Sewer Jetting"
+        },
+        {
+          "id": "sub-install",
+          "name": "Faucet & Fixture Installation"
+        }
+      ],
+      "enabled": true,
+      "order": 2
+    },
+    {
+      "id": "cat-painters",
+      "name": "Painting & Drywall",
+      "slug": "painting",
+      "icon": "Paintbrush",
+      "characterImage": "/src/assets/images/painter_character_1790071005515.jpg",
+      "characterAction": "Rolling smooth vibrant paint coats & wall finishing",
+      "characterWorkplace": "Wall Canvas & Paint Roller Tray",
+      "description": "Interior & exterior wall painting, plaster restoration, finish spray and color consultation",
+      "pricingModels": [
+        "hourly",
+        "quote"
+      ],
+      "basePrice": 55,
+      "subcategories": [
+        {
+          "id": "sub-interior",
+          "name": "Interior Room Painting"
+        },
+        {
+          "id": "sub-cabinet",
+          "name": "Kitchen Cabinet Refinishing"
+        },
+        {
+          "id": "sub-exterior",
+          "name": "Exterior Weatherproof Coating"
+        }
+      ],
+      "enabled": true,
+      "order": 3
+    },
+    {
+      "id": "cat-cleaners",
+      "name": "Cleaning & Maid",
+      "slug": "cleaning",
+      "icon": "Sparkles",
+      "characterImage": "/src/assets/images/cleaner_character_1790071024665.jpg",
+      "characterAction": "Misting eco sanitizers & buffing sparkling surfaces",
+      "characterWorkplace": "Deep Sanitization & Spray Squeegee",
+      "description": "Deep residential cleaning, move-out sanitization, office janitorial and window detailing",
+      "pricingModels": [
+        "hourly",
+        "fixed"
+      ],
+      "basePrice": 45,
+      "subcategories": [
+        {
+          "id": "sub-deep",
+          "name": "Whole Home Deep Clean"
+        },
+        {
+          "id": "sub-move",
+          "name": "Move-in / Move-out Turnaround"
+        },
+        {
+          "id": "sub-carpet",
+          "name": "Steam Carpet & Upholstery"
+        }
+      ],
+      "enabled": true,
+      "order": 4
+    },
+    {
+      "id": "cat-mechanic",
+      "name": "Mobile Auto Mechanic",
+      "slug": "auto-mechanic",
+      "icon": "Cog",
+      "characterImage": "/src/assets/images/mechanic_character_1790071041926.jpg",
+      "characterAction": "Tuning engine pistons & tightening chassis bolts",
+      "characterWorkplace": "Under-the-Hood Diagnostics & Socket Set",
+      "description": "On-demand roadside diagnostics, brake service, battery jump, oil change and alternator repair",
+      "pricingModels": [
+        "fixed",
+        "hourly"
+      ],
+      "basePrice": 60,
+      "subcategories": [
+        {
+          "id": "sub-brakes",
+          "name": "Brake Pad & Rotor Replacement"
+        },
+        {
+          "id": "sub-battery",
+          "name": "Battery Testing & Replacement"
+        },
+        {
+          "id": "sub-obd",
+          "name": "Check Engine Computer Scan"
+        }
+      ],
+      "enabled": true,
+      "order": 5
+    },
+    {
+      "id": "cat-hvac",
+      "name": "HVAC & Appliance",
+      "slug": "hvac-appliance",
+      "icon": "Thermometer",
+      "characterImage": "/src/assets/images/hvac_character_1790071057824.jpg",
+      "characterAction": "Calibrating coolant pressure & checking airflow fans",
+      "characterWorkplace": "AC Compressor Unit & Pressure Gauges",
+      "description": "Central air repair, heat pump maintenance, refrigerant recharge & smart thermostats",
+      "pricingModels": [
+        "fixed",
+        "hourly"
+      ],
+      "basePrice": 70,
+      "subcategories": [
+        {
+          "id": "sub-ac",
+          "name": "AC Refrigerant Recharge & Leak Check"
+        },
+        {
+          "id": "sub-heat",
+          "name": "Furnace & Heat Pump Maintenance"
+        },
+        {
+          "id": "sub-thermo",
+          "name": "Smart Thermostat Setup"
+        }
+      ],
+      "enabled": true,
+      "order": 6
+    },
+    {
+      "id": "cat-delivery",
+      "name": "Courier & Delivery",
+      "slug": "courier-delivery",
+      "icon": "Truck",
+      "characterImage": "/src/assets/images/courier_character_1790071074079.jpg",
+      "characterAction": "Dashing with express packages & parcels on route",
+      "characterWorkplace": "Express Dispatch & Secure Parcel Crate",
+      "description": "Same-day express package delivery, documents & fragile freight transport",
+      "pricingModels": [
+        "km",
+        "fixed"
+      ],
+      "basePrice": 12,
+      "subcategories": [
+        {
+          "id": "sub-express",
+          "name": "Express Bike / Moto"
+        },
+        {
+          "id": "sub-van",
+          "name": "Heavy Cargo Van"
+        },
+        {
+          "id": "sub-groceries",
+          "name": "Document & Parcel Delivery"
+        }
+      ],
+      "enabled": true,
+      "order": 7
+    },
+    {
+      "id": "cat-taxi",
+      "name": "Taxi & Rides",
+      "slug": "taxi-rides",
+      "icon": "Car",
+      "characterImage": "/src/assets/images/taxi_character_1790072748537.jpg",
+      "characterAction": "Steering smooth city transit & rapid pick-up",
+      "characterWorkplace": "Executive Vehicle & Real-time GPS Route",
+      "description": "City rides, airport transfers, chauffeur & premium car services with real-time GPS tracking",
+      "pricingModels": [
+        "km",
+        "fixed"
+      ],
+      "basePrice": 15,
+      "subcategories": [
+        {
+          "id": "sub-city-ride",
+          "name": "Standard City Ride"
+        },
+        {
+          "id": "sub-airport",
+          "name": "Airport Express Transfer"
+        },
+        {
+          "id": "sub-executive",
+          "name": "Executive Black Car"
+        }
+      ],
+      "enabled": true,
+      "order": 8
+    },
+    {
+      "id": "cat-food",
+      "name": "Food & Restaurants",
+      "slug": "food-restaurants",
+      "icon": "Utensils",
+      "characterImage": "/src/assets/images/restaurant_character_1790072736452.jpg",
+      "characterAction": "Tossing gourmet saute & plating hot artisan delicacies",
+      "characterWorkplace": "Commercial Range & Chef Skillet",
+      "description": "Chef-prepared gourmet cuisine, on-demand restaurant takeaway, artisan bakery, and private catering",
+      "pricingModels": [
+        "fixed",
+        "quote"
+      ],
+      "basePrice": 22,
+      "subcategories": [
+        {
+          "id": "sub-takeaway",
+          "name": "Restaurant Takeaway & Delivery"
+        },
+        {
+          "id": "sub-chef",
+          "name": "Private Chef & In-Home Dining"
+        },
+        {
+          "id": "sub-catering",
+          "name": "Gourmet Catering & Parties"
+        }
+      ],
+      "enabled": true,
+      "order": 9
+    },
+    {
+      "id": "cat-doctor",
+      "name": "Doctors & Healthcare",
+      "slug": "doctors-healthcare",
+      "icon": "Stethoscope",
+      "characterImage": "/src/assets/images/doctor_character_1790072723286.jpg",
+      "characterAction": "Listening to vitals with stethoscope & administering care",
+      "characterWorkplace": "Diagnostic Clinic & Mobile Care Bag",
+      "description": "Licensed mobile physicians, emergency urgent home visits, telehealth HD consultations, and registered nursing care",
+      "pricingModels": [
+        "fixed",
+        "hourly"
+      ],
+      "basePrice": 85,
+      "subcategories": [
+        {
+          "id": "sub-home-doc",
+          "name": "Urgent Doctor Home Visit"
+        },
+        {
+          "id": "sub-telehealth",
+          "name": "Telehealth HD Video Consultation"
+        },
+        {
+          "id": "sub-iv-nurse",
+          "name": "Mobile Nurse & IV Therapy"
+        }
+      ],
+      "enabled": true,
+      "order": 10
+    }
+  ],
+  "categoryRequests": [
+    {
+      "id": "req-cat-101",
+      "providerId": "prov-2",
+      "providerName": "Elena Rostova",
+      "providerEmail": "elena.rostova@example.com",
+      "categoryName": "Veterinary & Pet Emergency",
+      "description": "Emergency mobile veterinary triage, vaccinations, wound dressings, and pet telehealth for home pets.",
+      "suggestedPricing": "hourly",
+      "status": "pending",
+      "createdAt": "2026-10-02T19:28:06.972Z"
+    },
+    {
+      "id": "req-cat-102",
+      "providerId": "prov-3",
+      "providerName": "David Thorne",
+      "providerEmail": "david.thorne@example.com",
+      "categoryName": "Solar & Clean Energy Tech",
+      "description": "Solar micro-inverter diagnostics, rooftop array cleaning, home battery storage maintenance.",
+      "suggestedPricing": "fixed",
+      "status": "pending",
+      "createdAt": "2026-10-03T13:28:06.972Z"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "bk-disp-1791102756190",
+      "customerId": "cust-1",
+      "customerName": "Alex Rivera",
+      "customerPhone": "+1 (415) 890-1234",
+      "customerAvatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+      "providerId": "prov-3",
+      "providerName": "David Thorne",
+      "providerAvatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+      "categoryId": "cat-plumbing",
+      "serviceName": "Plumbing Services Urgent Service",
+      "bookingType": "instant",
+      "pricingModel": "fixed",
+      "status": "accepted",
+      "pickupLocation": {
+        "address": "Market St, SF",
+        "lat": 37.7749,
+        "lng": -122.4194
+      },
+      "notes": "Pipe leaking under kitchen sink",
+      "price": 65,
+      "commissionFee": 3.9,
+      "providerEarnings": 61.1,
+      "paymentStatus": "pending",
+      "paymentMethod": "card",
+      "createdAt": "2026-10-04T08:32:36.190Z",
+      "deliveryPin": "7814",
+      "deliveryVerified": false
+    },
+    {
+      "id": "bk-disp-1791102052150",
+      "customerId": "cust-1791102041067",
+      "customerName": "Test Customer",
+      "customerPhone": "+15551234567",
+      "customerAvatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+      "providerId": "prov-1791102044802",
+      "providerName": "Alex Electrician",
+      "providerAvatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+      "categoryId": "cat-electrician",
+      "serviceName": "Electrician & Power Urgent Service",
+      "bookingType": "instant",
+      "pricingModel": "fixed",
+      "status": "accepted",
+      "pickupLocation": {
+        "address": "Market St, SF",
+        "lat": 37.7749,
+        "lng": -122.4194
+      },
+      "notes": "Sparking outlet in living room",
+      "price": 65,
+      "commissionFee": 3.9,
+      "providerEarnings": 61.1,
+      "paymentStatus": "pending",
+      "paymentMethod": "card",
+      "createdAt": "2026-10-04T08:20:52.150Z",
+      "deliveryPin": "8577",
+      "deliveryVerified": false
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx-1791102756190",
+      "userId": "cust-1",
+      "bookingId": "bk-disp-1791102756190",
+      "amount": -65,
+      "type": "payment",
+      "status": "succeeded",
+      "description": "Payment for Plumbing Services Urgent Service",
+      "createdAt": "2026-10-04T08:32:36.190Z"
+    },
+    {
+      "id": "tx-1791102052150",
+      "userId": "cust-1791102041067",
+      "bookingId": "bk-disp-1791102052150",
+      "amount": -65,
+      "type": "payment",
+      "status": "succeeded",
+      "description": "Payment for Electrician & Power Urgent Service",
+      "createdAt": "2026-10-04T08:20:52.150Z"
+    }
+  ],
+  "reviews": [],
+  "messages": [],
+  "complaints": [],
+  "merchantSettings": {
+    "activeGateway": "stripe",
+    "environment": "live",
+    "stripe": {
+      "publishableKey": "pk_live_51N8x92B9ServexaRealMerchantGatewayLiveProd001",
+      "secretKeyConfigured": true,
+      "secretKeyPreview": "sk_live_••••••••••••••••••••7A91",
+      "webhookSecretConfigured": true,
+      "connectClientId": "ca_99XServexaConnectMarketplace",
+      "autoPayouts": true
+    },
+    "paypal": {
+      "clientId": "AQ-ServexaPaypalLiveGatewayMerchantId991",
+      "secretConfigured": true,
+      "secretPreview": "EL••••••••••••••••••••38F2"
+    },
+    "square": {
+      "appId": "sq0idp-ServexaSquareLiveDirectProcessingId",
+      "accessTokenConfigured": true,
+      "locationId": "LOC_SF_DOWNTOWN_01"
+    },
+    "bankSettlement": {
+      "merchantId": "MID-SERVEXA-COMMERCIAL-9092",
+      "bankName": "JPMorgan Chase & Co. Merchant Services",
+      "accountLast4": "4482",
+      "routingNumber": "121000358"
+    },
+    "directCardProcessingEnabled": true
+  },
+  "products": [],
+  "productOrders": [
+    {
+      "id": "ord-1001",
+      "orderNumber": "ORD-89421",
+      "productId": "prod-1",
+      "productName": "Square D 20A Homeline Circuit Breaker",
+      "productImage": "https://images.unsplash.com/photo-1558441719-8b489c63f7d1?w=600&auto=format&fit=crop&q=80",
+      "productPrice": 18.5,
+      "quantity": 2,
+      "totalAmount": 37,
+      "currency": "USD",
+      "providerId": "prov-2",
+      "providerName": "Elena Rostova",
+      "providerStoreName": "Tesla Master Electric & Solar Store",
+      "customerId": "cust-1",
+      "customerName": "Sarah Jenkins",
+      "customerEmail": "sarah.jenkins@gmail.com",
+      "customerPhone": "+1 (415) 890-2134",
+      "deliveryAddress": {
+        "fullName": "Sarah Jenkins",
+        "phone": "+1 (415) 890-2134",
+        "street": "450 Sutter St, Apt 8B",
+        "city": "San Francisco",
+        "state": "CA",
+        "zip": "94108",
+        "instructions": "Gate code #4011. Leave with building doorman."
+      },
+      "paymentMethod": "wallet",
+      "paymentStatus": "paid",
+      "orderStatus": "dispatched",
+      "trackingInfo": {
+        "carrierOrCourier": "Servexa Express Local Courier",
+        "trackingNumber": "SVX-TRK-784019",
+        "estimatedDelivery": "Today by 5:30 PM",
+        "dispatchNote": "Package handed over to driver. Fragile electrical parts securely boxed.",
+        "dispatchedAt": "2026-10-04T05:28:06.971Z"
+      },
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "timestamp": "2026-10-04T02:28:06.972Z",
+          "note": "Order confirmed and payment verified via customer wallet."
+        },
+        {
+          "status": "processing",
+          "timestamp": "2026-10-04T03:58:06.972Z",
+          "note": "Items picked from inventory and packaged for shipping."
+        },
+        {
+          "status": "dispatched",
+          "timestamp": "2026-10-04T05:28:06.972Z",
+          "note": "Dispatched via Servexa Express Local Courier (Tracking: SVX-TRK-784019)."
+        }
+      ],
+      "createdAt": "2026-10-04T02:28:06.972Z",
+      "updatedAt": "2026-10-04T05:28:06.972Z"
+    },
+    {
+      "id": "ord-1002",
+      "orderNumber": "ORD-54190",
+      "productId": "prod-3",
+      "productName": "SharkBite 3/4\" Brass Push-to-Connect Full Port Ball Valve",
+      "productImage": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
+      "productPrice": 24.5,
+      "quantity": 1,
+      "totalAmount": 24.5,
+      "currency": "USD",
+      "providerId": "prov-3",
+      "providerName": "David Thorne",
+      "providerStoreName": "Thorne 24/7 Rapid Hydro Plumbing Depot",
+      "customerId": "cust-1",
+      "customerName": "Sarah Jenkins",
+      "customerEmail": "sarah.jenkins@gmail.com",
+      "customerPhone": "+1 (415) 890-2134",
+      "deliveryAddress": {
+        "fullName": "Sarah Jenkins",
+        "phone": "+1 (415) 890-2134",
+        "street": "450 Sutter St, Apt 8B",
+        "city": "San Francisco",
+        "state": "CA",
+        "zip": "94108",
+        "instructions": "Deliver to front porch."
+      },
+      "paymentMethod": "wallet",
+      "paymentStatus": "paid",
+      "orderStatus": "confirmed",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "timestamp": "2026-10-04T06:28:06.972Z",
+          "note": "Order confirmed and ready for provider dispatch."
+        }
+      ],
+      "createdAt": "2026-10-04T06:28:06.972Z",
+      "updatedAt": "2026-10-04T06:28:06.972Z"
+    }
+  ],
+  "invoices": [],
+  "payouts": [
+    {
+      "id": "payout-101",
+      "providerId": "prov-2",
+      "providerName": "Elena Rostova",
+      "amount": 1420.5,
+      "status": "scheduled",
+      "requestedAt": "2026-10-03T17:28:06.972Z",
+      "estimatedArrivalMinHours": 24,
+      "estimatedArrivalMaxHours": 48,
+      "scheduledDisbursementAt": "2026-10-05T01:28:06.972Z",
+      "payoutMethod": "stripe_connect",
+      "referenceNumber": "PO-STR-2024-9981"
+    },
+    {
+      "id": "payout-102",
+      "providerId": "prov-3",
+      "providerName": "David Thorne",
+      "amount": 890,
+      "status": "processing",
+      "requestedAt": "2026-10-04T01:28:06.972Z",
+      "estimatedArrivalMinHours": 24,
+      "estimatedArrivalMaxHours": 48,
+      "scheduledDisbursementAt": "2026-10-05T15:28:06.972Z",
+      "payoutMethod": "bank_wire",
+      "referenceNumber": "PO-ACH-2024-4412"
+    }
+  ],
+  "emailSettings": {
+    "resendApiKey": "re_servexa_live_k92Jsh820B19f94k1L",
+    "resendSenderEmail": "notifications@servexaworld.com",
+    "resendVerified": true,
+    "smtpHost": "smtp.resend.com",
+    "smtpPort": 587,
+    "smtpUser": "resend",
+    "smtpPassword": "••••••••••••••••••••••••",
+    "smtpSecure": true,
+    "smtpVerified": true,
+    "lastDispatchedEmail": {
+      "to": "alex.rivera@example.com",
+      "subject": "Order Dispatch & 15-Second Confirmation #BK-902",
+      "service": "resend",
+      "timestamp": "2026-10-04T07:28:06.972Z"
+    }
+  },
+  "notifications": [
+    {
+      "id": "notif-1791102756190",
+      "userId": "prov-3",
+      "title": "New Booking Request",
+      "message": "Alex Rivera requested Plumbing Services Urgent Service",
+      "type": "booking",
+      "read": false,
+      "createdAt": "2026-10-04T08:32:36.190Z"
+    },
+    {
+      "id": "notif-book-later-1791102754653-prov-3",
+      "userId": "prov-3",
+      "title": "📅 Scheduled Service Request (Plumbing Services)",
+      "message": "Customer booked for later: \"2026-10-05 (Morning (9:00 AM - 12:00 PM))\". You have 60 minutes to review and accept.",
+      "type": "booking",
+      "read": false,
+      "createdAt": "2026-10-04T08:32:34.653Z"
+    },
+    {
+      "id": "notif-disp-1791102752557-prov-3",
+      "userId": "prov-3",
+      "title": "⚡ Immediate Job Dispatch (Plumbing Services)",
+      "message": "New customer request in your 10km area: \"Pipe leaking under kitchen sink\". 30s acceptance window!",
+      "type": "booking",
+      "read": false,
+      "createdAt": "2026-10-04T08:32:32.557Z"
+    },
+    {
+      "id": "notif-1791102052150",
+      "userId": "prov-1791102044802",
+      "title": "New Booking Request",
+      "message": "Test Customer requested Electrician & Power Urgent Service",
+      "type": "booking",
+      "read": false,
+      "createdAt": "2026-10-04T08:20:52.150Z"
+    },
+    {
+      "id": "notif-disp-1791102047453-prov-1791102044802",
+      "userId": "prov-1791102044802",
+      "title": "⚡ Immediate Job Dispatch (Electrician & Power)",
+      "message": "New customer request in your 10km area: \"Sparking outlet in living room\". Accept to start live consultation!",
+      "type": "booking",
+      "read": false,
+      "createdAt": "2026-10-04T08:20:47.453Z"
+    },
+    {
+      "id": "notif-disp-1791102047453-prov-2",
+      "userId": "prov-2",
+      "title": "⚡ Immediate Job Dispatch (Electrician & Power)",
+      "message": "New customer request in your 10km area: \"Sparking outlet in living room\". Accept to start live consultation!",
+      "type": "booking",
+      "read": false,
+      "createdAt": "2026-10-04T08:20:47.453Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-1",
+      "adminId": "admin-1",
+      "adminName": "Mr. Pirate",
+      "action": "PLATFORM_INITIALIZATION",
+      "details": "Servexa AI global multi-service marketplace core engine brought online with 5% baseline commission.",
+      "timestamp": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "log-2",
+      "adminId": "admin-1",
+      "adminName": "Mr. Pirate",
+      "action": "PROVIDER_VERIFIED",
+      "targetUserId": "prov-1",
+      "targetName": "Marcus Vance",
+      "details": "Verified commercial driver credentials and vehicle inspection certificate.",
+      "timestamp": "2024-01-10T08:30:00.000Z"
+    }
+  ],
+  "activities": [
+    {
+      "id": "act-1791102756190-ywjn",
+      "activityType": "service_request",
+      "title": "Service Request: Plumbing Services Urgent Service",
+      "description": "Alex Rivera booked Plumbing Services Urgent Service with David Thorne ($65.00)",
+      "userId": "cust-1",
+      "userName": "Alex Rivera",
+      "userRole": "customer",
+      "customerId": "cust-1",
+      "customerName": "Alex Rivera",
+      "providerId": "prov-3",
+      "providerName": "David Thorne",
+      "bookingId": "bk-disp-1791102756190",
+      "categoryId": "cat-plumbing",
+      "categoryName": "Plumbing Services",
+      "amount": 65,
+      "currency": "USD",
+      "paymentMethod": "wallet",
+      "status": "pending",
+      "timestamp": "2026-10-04T08:32:36.190Z",
+      "referenceId": "bk-disp-1791102756190"
+    },
+    {
+      "id": "act-1791102052150-052p",
+      "activityType": "service_request",
+      "title": "Service Request: Electrician & Power Urgent Service",
+      "description": "Test Customer booked Electrician & Power Urgent Service with Alex Electrician ($65.00)",
+      "userId": "cust-1791102041067",
+      "userName": "Test Customer",
+      "userRole": "customer",
+      "customerId": "cust-1791102041067",
+      "customerName": "Test Customer",
+      "providerId": "prov-1791102044802",
+      "providerName": "Alex Electrician",
+      "bookingId": "bk-disp-1791102052150",
+      "categoryId": "cat-electrician",
+      "categoryName": "Electrician & Power",
+      "amount": 65,
+      "currency": "USD",
+      "paymentMethod": "wallet",
+      "status": "pending",
+      "timestamp": "2026-10-04T08:20:52.150Z",
+      "referenceId": "bk-disp-1791102052150"
+    },
+    {
+      "id": "act-101",
+      "activityType": "service_request",
+      "title": "Customer Service Request Created",
+      "description": "Alex Rivera created a service request for Circuit Short Diagnosis with SparkMaster Electrical Solutions",
+      "userId": "cust-1",
+      "userName": "Alex Rivera",
+      "userRole": "customer",
+      "customerId": "cust-1",
+      "customerName": "Alex Rivera",
+      "customerEmail": "alex.rivera@example.com",
+      "providerId": "prov-2",
+      "providerName": "Elena Rostova",
+      "providerEmail": "elena.rostova@example.com",
+      "bookingId": "BK-902",
+      "categoryId": "cat-electrician",
+      "categoryName": "Electrician & Power",
+      "storeName": "SparkMaster Electrical Solutions",
+      "amount": 145,
+      "currency": "USD",
+      "paymentMethod": "wallet",
+      "status": "completed",
+      "timestamp": "2026-10-03T19:28:06.972Z",
+      "referenceId": "BK-902"
+    },
+    {
+      "id": "act-102",
+      "activityType": "invoice_payment",
+      "title": "Invoice Payment Received",
+      "description": "Alex Rivera paid $120.00 for Emergency Pipe Leak Repair invoice to Thorne Master Plumbing",
+      "userId": "cust-1",
+      "userName": "Alex Rivera",
+      "userRole": "customer",
+      "customerId": "cust-1",
+      "customerName": "Alex Rivera",
+      "customerEmail": "alex.rivera@example.com",
+      "providerId": "prov-3",
+      "providerName": "David Thorne",
+      "providerEmail": "david.thorne@example.com",
+      "invoiceId": "INV-301",
+      "categoryId": "cat-plumbing",
+      "categoryName": "Plumbing Services",
+      "storeName": "Thorne Master Plumbing & Drains",
+      "amount": 120,
+      "currency": "USD",
+      "paymentMethod": "wallet",
+      "status": "completed",
+      "timestamp": "2026-10-04T02:28:06.972Z",
+      "referenceId": "INV-301"
+    },
+    {
+      "id": "act-103",
+      "activityType": "product_purchase",
+      "title": "Product Storefront Order Placed",
+      "description": "Alex Rivera purchased Honeywell Home T9 Smart Wi-Fi Thermostat ($94.00) from Apex Climate & HVAC Supplies",
+      "userId": "cust-1",
+      "userName": "Alex Rivera",
+      "userRole": "customer",
+      "customerId": "cust-1",
+      "customerName": "Alex Rivera",
+      "customerEmail": "alex.rivera@example.com",
+      "providerId": "prov-9",
+      "providerName": "Kevin Wu",
+      "providerEmail": "kevin.wu@example.com",
+      "orderId": "ORD-8812",
+      "productId": "prod-hvac-1",
+      "categoryId": "cat-hvac",
+      "categoryName": "HVAC & Appliance",
+      "storeName": "Apex Climate & HVAC Supplies",
+      "amount": 94,
+      "currency": "USD",
+      "paymentMethod": "stripe_direct",
+      "status": "confirmed",
+      "timestamp": "2026-10-03T23:28:06.972Z",
+      "referenceId": "ORD-8812"
+    },
+    {
+      "id": "act-104",
+      "activityType": "wallet_deposit",
+      "title": "Wallet Deposit Completed",
+      "description": "Customer Alex Rivera deposited $500.00 to platform balance via Stripe Direct Card",
+      "userId": "cust-1",
+      "userName": "Alex Rivera",
+      "userRole": "customer",
+      "customerId": "cust-1",
+      "customerName": "Alex Rivera",
+      "transactionId": "tx-dep-401",
+      "amount": 500,
+      "currency": "USD",
+      "paymentMethod": "stripe_card",
+      "status": "succeeded",
+      "timestamp": "2026-10-03T07:28:06.972Z",
+      "referenceId": "tx-dep-401"
+    },
+    {
+      "id": "act-105",
+      "activityType": "wallet_withdrawal",
+      "title": "Provider Payout Withdrawal Requested",
+      "description": "Provider Elena Rostova requested payout of $1,420.50 via Stripe Connect",
+      "userId": "prov-2",
+      "userName": "Elena Rostova",
+      "userRole": "provider",
+      "providerId": "prov-2",
+      "providerName": "Elena Rostova",
+      "providerEmail": "elena.rostova@example.com",
+      "amount": 1420.5,
+      "currency": "USD",
+      "paymentMethod": "stripe_connect",
+      "status": "scheduled",
+      "timestamp": "2026-10-03T17:28:06.972Z",
+      "referenceId": "PO-STR-2024-9981"
+    },
+    {
+      "id": "act-106",
+      "activityType": "verification_approval",
+      "title": "Provider Verification Approved",
+      "description": "Admin Mr. Pirate verified identity documents and enabled wallet for Elena Rostova",
+      "userId": "admin-1",
+      "userName": "Mr. Pirate",
+      "userRole": "admin",
+      "providerId": "prov-2",
+      "providerName": "Elena Rostova",
+      "status": "verified",
+      "timestamp": "2026-10-02T15:28:06.972Z",
+      "referenceId": "VERIF-APP-101"
+    },
+    {
+      "id": "act-107",
+      "activityType": "review",
+      "title": "Customer Review Submitted",
+      "description": "Alex Rivera gave 5.0 stars with review: \"Fast response, fixed high pressure leak cleanly in 25 minutes!\"",
+      "userId": "cust-1",
+      "userName": "Alex Rivera",
+      "userRole": "customer",
+      "customerId": "cust-1",
+      "customerName": "Alex Rivera",
+      "providerId": "prov-3",
+      "providerName": "David Thorne",
+      "storeName": "Thorne Master Plumbing & Drains",
+      "categoryId": "cat-plumbing",
+      "categoryName": "Plumbing Services",
+      "status": "published",
+      "timestamp": "2026-10-04T03:28:06.972Z",
+      "referenceId": "REV-801"
+    }
+  ],
+  "emailLogs": [
+    {
+      "id": "elog-101",
+      "recipient": "alex.rivera@example.com",
+      "recipientName": "Alex Rivera",
+      "emailType": "customer_invoice_paid",
+      "subject": "[Servexa World] Payment Receipt: $120.00 Confirmed",
+      "relatedUserId": "cust-1",
+      "relatedUserName": "Alex Rivera",
+      "relatedOrderId": "INV-301",
+      "storeName": "Thorne Master Plumbing & Drains",
+      "categoryName": "Plumbing Services",
+      "sentTimestamp": "2026-10-04T02:28:06.972Z",
+      "deliveryStatus": "delivered",
+      "serviceUsed": "smtp",
+      "messagePreview": "Payment receipt of $120.00 for Emergency Pipe Leak Repair"
+    },
+    {
+      "id": "elog-102",
+      "recipient": "elena.rostova@example.com",
+      "recipientName": "Elena Rostova",
+      "emailType": "provider_new_request",
+      "subject": "[Servexa World ALERT] New Service Opportunity: Electrician & Power (#BK-902)",
+      "relatedUserId": "prov-2",
+      "relatedUserName": "Elena Rostova",
+      "relatedOrderId": "BK-902",
+      "storeName": "SparkMaster Electrical Solutions",
+      "categoryName": "Electrician & Power",
+      "sentTimestamp": "2026-10-03T19:28:06.972Z",
+      "deliveryStatus": "delivered",
+      "serviceUsed": "smtp",
+      "messagePreview": "New Customer Service Request for Circuit Short Diagnosis"
+    },
+    {
+      "id": "elog-103",
+      "recipient": "kevin.wu@example.com",
+      "recipientName": "Kevin Wu",
+      "emailType": "provider_new_product_order",
+      "subject": "[Servexa World] New Storefront Order: Apex Climate & HVAC Supplies (#ORD-8812)",
+      "relatedUserId": "prov-9",
+      "relatedUserName": "Kevin Wu",
+      "relatedOrderId": "ORD-8812",
+      "storeName": "Apex Climate & HVAC Supplies",
+      "categoryName": "HVAC & Appliance",
+      "sentTimestamp": "2026-10-03T23:28:06.972Z",
+      "deliveryStatus": "delivered",
+      "serviceUsed": "smtp",
+      "messagePreview": "New store purchase for Honeywell Home T9 Smart Wi-Fi Thermostat"
+    },
+    {
+      "id": "elog-104",
+      "recipient": "101proposal101@gmail.com",
+      "recipientName": "Admin Mr. Pirate",
+      "emailType": "admin_alert",
+      "subject": "[Servexa World SYSTEM ALERT] Large Wallet Withdrawal: $1,420.50 requested by Elena Rostova",
+      "relatedUserId": "prov-2",
+      "relatedUserName": "Elena Rostova",
+      "storeName": "SparkMaster Electrical Solutions",
+      "categoryName": "Electrician & Power",
+      "sentTimestamp": "2026-10-03T17:28:06.972Z",
+      "deliveryStatus": "delivered",
+      "serviceUsed": "smtp",
+      "messagePreview": "Large withdrawal alert for $1,420.50"
+    }
+  ],
+  "smtpSettings": {
+    "enabled": true,
+    "host": "smtp.gmail.com",
+    "port": 587,
+    "username": "notifications@servexaworld.com",
+    "password": "••••••••",
+    "hasPassword": true,
+    "encryption": "tls",
+    "senderName": "Servexa World Notifications",
+    "senderEmail": "notifications@servexaworld.com",
+    "replyToEmail": "support@servexaworld.com",
+    "verified": true,
+    "lastTestedAt": "2026-10-04T06:28:06.972Z",
+    "testResult": {
+      "success": true,
+      "message": "SMTP connection established successfully via TLS (Port 587)",
+      "timestamp": "2026-10-04T06:28:06.972Z"
+    },
+    "notificationToggles": {
+      "customerEvents": true,
+      "providerEvents": true,
+      "adminAlerts": true,
+      "marketing": false
+    }
+  },
+  "settings": {
+    "commissionRatePct": 6,
+    "consultationFee": 1,
+    "platformName": "Servexa World",
+    "pbxVoiceCodec": "Opus-Adaptive",
+    "instantPayouts": true,
+    "systemHealth": "optimal",
+    "specialPrize": {
+      "title": "Master Service Excellence Trophy & $250 Cash Bonus",
+      "amount": 250,
+      "badge": "🏆 Master Pro 2025",
+      "description": "Awarded by Servexa World Admin for top rating and zero-complaint service."
+    }
+  }
+}

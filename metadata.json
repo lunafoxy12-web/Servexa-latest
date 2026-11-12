@@ -1,0 +1,12 @@
+{
+  "name": "Remix Remix Remix Servexa World ",
+  "description": "Production multi-business service marketplace connecting customers, providers, and administration with real-time PBX calling, GPS tracking, and AI assistance.",
+  "requestFramePermissions": [
+    "microphone",
+    "geolocation",
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

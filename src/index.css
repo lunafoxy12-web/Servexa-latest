@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #f8fafc;
+    --bg-surface: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --border-subtle: #e2e8f0;
+  }
+
+  .dark {
+    --bg-primary: #090d16;
+    --bg-surface: #0f172a;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-subtle: #1e293b;
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Smooth continuous marquee animation for moving categories in one line */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-moving {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 75s linear infinite;
+  will-change: transform;
+}
+
+/* Animated Category and Subcategory Cards */
+@keyframes card-float-gentle {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+  }
+  50% {
+    transform: translateY(-6px) scale(1.05);
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.16));
+  }
+}
+
+@keyframes card-float-alt {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+  }
+  50% {
+    transform: translateY(-5px) rotate(2deg) scale(1.04);
+    filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.15));
+  }
+}
+
+@keyframes category-picture-pulse {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-3px) scale(1.03) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-5px) scale(1.05) rotate(1deg);
+  }
+}
+
+@keyframes card-glow-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes card-sheen {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  50%, 100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.animate-card-float {
+  animation: card-float-gentle 3.5s ease-in-out infinite;
+  will-change: transform, filter;
+}
+
+.animate-card-float-alt {
+  animation: card-float-alt 4s ease-in-out infinite;
+  will-change: transform, filter;
+}
+
+.animate-category-img {
+  animation: category-picture-pulse 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-card-glow {
+  animation: card-glow-pulse 3s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-card-sheen {
+  animation: card-sheen 4s ease-in-out infinite;
+}
+
+/* Print styling for Academic Presentation PDF export */
+@media print {
+  @page {
+    size: landscape;
+    margin: 1cm;
+  }
+  
+  body * {
+    visibility: hidden !important;
+  }
+  
+  #presentation-print-container,
+  #presentation-print-container * {
+    visibility: visible !important;
+  }
+  
+  #presentation-print-container {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  
+  .presentation-slide-page {
+    page-break-after: always !important;
+    break-after: page !important;
+    min-height: 90vh !important;
+    box-sizing: border-box !important;
+    padding: 2.5rem !important;
+    margin-bottom: 2rem !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
