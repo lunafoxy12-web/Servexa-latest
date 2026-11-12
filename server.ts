@@ -3518,6 +3518,15 @@ app.get('/api/notifications', (req: Request, res: Response) => {
   res.json(userNotifs);
 });
 
+// Maps Configuration Proxy for Client
+app.get('/api/maps/config', (req: Request, res: Response) => {
+  const googleApiKey = process.env.VITE_GOOGLE_MAPS_API_KEY || process.env.GOOGLE_MAPS_API_KEY || '';
+  res.json({
+    apiKey: googleApiKey,
+    hasKey: Boolean(googleApiKey)
+  });
+});
+
 // Reverse geocode proxy for real-time customer GPS coordinates
 app.get('/api/geo/reverse-geocode', async (req: Request, res: Response) => {
   const { lat, lng } = req.query;

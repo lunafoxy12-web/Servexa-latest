@@ -841,6 +841,7 @@ export const ServiceCategoryPageView: React.FC<ServiceCategoryPageViewProps> = (
           <div className="w-full h-full absolute inset-0">
             <Map
               mapId="DEMO_MAP_ID"
+              internalUsageAttributionIds={['gmp_mcp_codeassist_v1_aistudio']}
               center={userCoords}
               zoom={13}
               gestureHandling="greedy"

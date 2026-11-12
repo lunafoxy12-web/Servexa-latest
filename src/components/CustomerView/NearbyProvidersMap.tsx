@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import {
   APIProvider,
   Map,
   AdvancedMarker,
   useMap
 } from '@vis.gl/react-google-maps';
+import L from 'leaflet';
 import {
   MapPin,
   Navigation,
@@ -38,6 +39,143 @@ function MapRecenterController({ center }: { center: { lat: number; lng: number 
   }, [map, center]);
   return null;
 }
+
+/**
+ * Interactive Leaflet view with zero watermarks for nearby specialists and GPS lock
+ */
+const LeafletNearbyProvidersView: React.FC<{
+  userCoords: { lat: number; lng: number };
+  providers: Array<ProviderProfile & { mapLat: number; mapLng: number; distanceKm: number }>;
+  selectedProvider: ProviderProfile | null;
+  onSelectProvider: (p: ProviderProfile) => void;
+  onLocationChange?: (lat: number, lng: number) => void;
+}> = ({ userCoords, providers, selectedProvider, onSelectProvider, onLocationChange }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<L.Map | null>(null);
+  const userMarkerRef = useRef<L.Marker | null>(null);
+  const radiusCircleRef = useRef<L.Circle | null>(null);
+  const providerMarkersRef = useRef<L.Marker[]>([]);
+
+  useEffect(() => {
+    if (!containerRef.current || mapRef.current) return;
+
+    const map = L.map(containerRef.current, {
+      center: [userCoords.lat, userCoords.lng],
+      zoom: 13,
+      zoomControl: false,
+      attributionControl: false
+    });
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19,
+      subdomains: 'abcd'
+    }).addTo(map);
+
+    // 10km radius circle showing service boundary
+    const circle = L.circle([userCoords.lat, userCoords.lng], {
+      radius: 10000,
+      color: '#6366f1',
+      fillColor: '#818cf8',
+      fillOpacity: 0.08,
+      weight: 1.5,
+      dashArray: '4, 4'
+    }).addTo(map);
+    radiusCircleRef.current = circle;
+
+    // User GPS Marker
+    const userIcon = L.divIcon({
+      className: 'user-gps-marker',
+      html: `
+        <div class="relative flex flex-col items-center select-none" style="transform: translate(-50%, -100%);">
+          <div class="px-2 py-0.5 rounded-md bg-slate-950 text-white text-[10px] font-bold shadow-lg border border-blue-400 whitespace-nowrap mb-1">
+            Your Location
+          </div>
+          <div class="relative flex items-center justify-center">
+            <div class="w-7 h-7 rounded-full bg-blue-500/30 animate-ping absolute"></div>
+            <div class="w-6 h-6 rounded-full bg-blue-600 border-2 border-white shadow-xl flex items-center justify-center text-white">
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+            </div>
+          </div>
+        </div>
+      `,
+      iconSize: [30, 42],
+      iconAnchor: [15, 42]
+    });
+
+    const userMarker = L.marker([userCoords.lat, userCoords.lng], {
+      icon: userIcon,
+      draggable: !!onLocationChange
+    }).addTo(map);
+
+    if (onLocationChange) {
+      userMarker.on('dragend', (e: any) => {
+        const pos = e.target.getLatLng();
+        onLocationChange(pos.lat, pos.lng);
+      });
+      map.on('click', (e: any) => {
+        const { lat, lng } = e.latlng;
+        userMarker.setLatLng([lat, lng]);
+        onLocationChange(lat, lng);
+      });
+    }
+
+    userMarkerRef.current = userMarker;
+    mapRef.current = map;
+
+    return () => {
+      map.remove();
+      mapRef.current = null;
+      userMarkerRef.current = null;
+      radiusCircleRef.current = null;
+      providerMarkersRef.current = [];
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!mapRef.current || !userMarkerRef.current || !radiusCircleRef.current) return;
+    userMarkerRef.current.setLatLng([userCoords.lat, userCoords.lng]);
+    radiusCircleRef.current.setLatLng([userCoords.lat, userCoords.lng]);
+    mapRef.current.panTo([userCoords.lat, userCoords.lng], { animate: true });
+  }, [userCoords.lat, userCoords.lng]);
+
+  useEffect(() => {
+    if (!mapRef.current) return;
+    providerMarkersRef.current.forEach((m) => m.remove());
+    providerMarkersRef.current = [];
+
+    providers.forEach((p) => {
+      const isSelected = selectedProvider?.id === p.id;
+      const provIcon = L.divIcon({
+        className: 'nearby-prov-marker',
+        html: `
+          <div class="relative flex flex-col items-center select-none cursor-pointer" style="transform: translate(-50%, -100%);">
+            <div class="px-2 py-0.5 rounded-lg text-[10px] font-bold shadow-lg whitespace-nowrap mb-1 flex items-center gap-1 border ${
+              isSelected ? 'bg-indigo-600 text-white border-white scale-110 ring-2 ring-indigo-400' : 'bg-slate-900/95 text-white border-slate-700'
+            }">
+              <span>${p.businessName.split(' ')[0]}</span>
+              <span class="text-amber-300 font-bold">★${p.rating}</span>
+            </div>
+            <div class="w-8 h-8 rounded-full border-2 shadow-xl flex items-center justify-center text-white ${
+              isSelected ? 'bg-indigo-600 border-white ring-4 ring-indigo-400/50' : 'bg-slate-800 border-indigo-400'
+            }">
+              <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+          </div>
+        `,
+        iconSize: [36, 46],
+        iconAnchor: [18, 46]
+      });
+
+      const m = L.marker([p.mapLat, p.mapLng], { icon: provIcon }).addTo(mapRef.current!);
+      m.on('click', () => {
+        onSelectProvider(p);
+      });
+      providerMarkersRef.current.push(m);
+    });
+  }, [providers, selectedProvider, onSelectProvider]);
+
+  return <div ref={containerRef} className="w-full h-full absolute inset-0 z-0" />;
+};
 
 export const NearbyProvidersMap: React.FC<NearbyProvidersMapProps> = ({
   providers,
@@ -259,13 +397,12 @@ export const NearbyProvidersMap: React.FC<NearbyProvidersMapProps> = ({
               </div>
             </APIProvider>
           ) : (
-            <iframe
-              title="Nearby Providers Live Google Map"
-              width="100%"
-              height="100%"
-              className="w-full h-full border-0 absolute inset-0 opacity-90 contrast-[1.05]"
-              loading="lazy"
-              src={`https://maps.google.com/maps?q=${userCoords.lat},${userCoords.lng}&hl=en&z=14&output=embed`}
+            <LeafletNearbyProvidersView
+              userCoords={userCoords}
+              providers={providersWithCalculatedCoords}
+              selectedProvider={selectedProvider}
+              onSelectProvider={setSelectedProvider}
+              onLocationChange={(lat, lng) => setUserCoords({ lat, lng })}
             />
           )}
 

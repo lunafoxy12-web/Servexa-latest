@@ -42,10 +42,25 @@ if (typeof window !== 'undefined') {
 }
 
 export function useGoogleMapsStatus() {
-  const apiKey = ((import.meta as any).env?.VITE_GOOGLE_MAPS_API_KEY || '').trim();
+  const [apiKey, setApiKey] = useState<string>(
+    ((import.meta as any).env?.VITE_GOOGLE_MAPS_API_KEY || '').trim()
+  );
   const [authFailed, setAuthFailed] = useState<boolean>(globalAuthFailureDetected);
   const [errorMessage, setErrorMessage] = useState<string>(globalErrorMessage);
   const [isDismissed, setIsDismissed] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (!apiKey) {
+      fetch('/api/maps/config')
+        .then((r) => r.json())
+        .then((data) => {
+          if (data?.apiKey) {
+            setApiKey(data.apiKey.trim());
+          }
+        })
+        .catch(() => {});
+    }
+  }, [apiKey]);
 
   useEffect(() => {
     const handleUpdate = () => {

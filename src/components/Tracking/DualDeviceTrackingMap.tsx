@@ -416,9 +416,6 @@ export const DualDeviceTrackingMap: React.FC<DualDeviceTrackingMapProps> = ({
     window.open(mapsUrl, '_blank', 'noopener,noreferrer');
   };
 
-  const googleMapsEmbedUrl = canUseGoogleMaps
-    ? `https://www.google.com/maps/embed/v1/directions?key=${GOOGLE_MAPS_API_KEY}&origin=${providerCoords.lat.toFixed(6)},${providerCoords.lng.toFixed(6)}&destination=${customerCoords.lat.toFixed(6)},${customerCoords.lng.toFixed(6)}&mode=driving`
-    : `https://maps.google.com/maps?saddr=${providerCoords.lat.toFixed(6)},${providerCoords.lng.toFixed(6)}&daddr=${customerCoords.lat.toFixed(6)},${customerCoords.lng.toFixed(6)}&output=embed`;
 
   return (
     <div className={`relative bg-slate-950 overflow-hidden select-none ${className}`}>
@@ -436,7 +433,11 @@ export const DualDeviceTrackingMap: React.FC<DualDeviceTrackingMapProps> = ({
       )}
 
       {/* Map Content View: Vector Radar or Google Maps */}
-      {mapMode === 'google' ? (
+      <div className={`w-full h-full z-0 ${mapMode === 'vector' ? 'block' : 'hidden'}`}>
+        <div ref={mapContainerRef} className="w-full h-full z-0" />
+      </div>
+
+      {mapMode === 'google' && (
         <div className="w-full h-full relative z-0 bg-slate-900">
           {canUseGoogleMaps ? (
             <APIProvider apiKey={GOOGLE_MAPS_API_KEY} onError={handleMapError}>
@@ -451,17 +452,37 @@ export const DualDeviceTrackingMap: React.FC<DualDeviceTrackingMapProps> = ({
               />
             </APIProvider>
           ) : (
-            <iframe
-              title={`Google Maps Live Route #${orderNumber}`}
-              src={googleMapsEmbedUrl}
-              className="w-full h-full border-0"
-              loading="lazy"
-              allowFullScreen
-            />
+            <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-slate-950 text-white">
+              <div className="w-14 h-14 rounded-2xl bg-indigo-600/20 border border-indigo-500/40 flex items-center justify-center mb-3">
+                <Navigation className="w-7 h-7 text-indigo-400" />
+              </div>
+              <h4 className="text-base font-bold text-white mb-1">Live Telemetry Tracking Active</h4>
+              <p className="text-xs text-slate-300 max-w-md mb-4">
+                Real-time GPS telemetry between {providerName} and {customerName} is streaming live on the high-definition Radar Map with zero watermarks.
+              </p>
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMapMode('vector');
+                    setTimeout(() => mapRef.current?.invalidateSize(), 50);
+                  }}
+                  className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-md cursor-pointer transition-colors"
+                >
+                  View Radar Telemetry Map
+                </button>
+                <button
+                  type="button"
+                  onClick={handleOpenGoogleDirections}
+                  className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-bold shadow-md cursor-pointer transition-colors flex items-center gap-1.5"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span>Open in Google Maps App</span>
+                </button>
+              </div>
+            </div>
           )}
         </div>
-      ) : (
-        <div ref={mapContainerRef} className="w-full h-full z-0" />
       )}
 
       {/* Floating Header Overlay: Order Number, Controls & Mode Toggle */}

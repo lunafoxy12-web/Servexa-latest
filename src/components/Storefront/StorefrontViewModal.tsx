@@ -31,6 +31,7 @@ import {
   ArrowLeft
 } from 'lucide-react';
 import { ProductPreviewModal } from '../CustomerView/ProductPreviewModal';
+import { GoogleDeliveryMap } from '../common/GoogleDeliveryMap';
 
 export const StorefrontViewModal: React.FC = () => {
   const {
@@ -217,15 +218,11 @@ export const StorefrontViewModal: React.FC = () => {
             </button>
           </div>
           <div className="flex-1 w-full h-full relative">
-            <iframe
-              title="Fullscreen Storefront Map"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-              src={`https://maps.google.com/maps?q=${provider.location.lat},${provider.location.lng}&hl=en&z=16&output=embed`}
+            <GoogleDeliveryMap
+              lat={provider.location.lat}
+              lng={provider.location.lng}
+              address={provider.location.address}
+              heightClass="h-full"
             />
           </div>
         </div>
@@ -638,15 +635,11 @@ export const StorefrontViewModal: React.FC = () => {
                   </div>
 
                   <div className="h-56 w-full rounded-2xl overflow-hidden border border-slate-200 shadow-inner relative bg-slate-100">
-                    <iframe
-                      title="Storefront Realtime Google Map"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      loading="lazy"
-                      allowFullScreen
-                      referrerPolicy="no-referrer-when-downgrade"
-                      src={`https://maps.google.com/maps?q=${provider.location.lat},${provider.location.lng}&hl=en&z=15&output=embed`}
+                    <GoogleDeliveryMap
+                      lat={provider.location.lat}
+                      lng={provider.location.lng}
+                      address={provider.location.address}
+                      heightClass="h-full"
                     />
                   </div>
 
