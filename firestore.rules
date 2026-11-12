@@ -43,7 +43,7 @@ service cloud.firestore {
       allow create: if isSignedIn() && request.auth.uid == userId && isValidId(userId);
       allow update: if isSignedIn() && (
         isAdmin() ||
-        (request.auth.uid == userId && incoming().diff(existing()).affectedKeys().hasOnly(['name', 'phone', 'avatar', 'updatedAt', 'idVerification', 'currency', 'selectedCurrency', 'preferredCurrency', 'balances', 'countryCode', 'documentCountry', 'bio', 'businessName', 'serviceArea', 'workingHours', 'hourlyRate', 'location', 'walletStatus', 'walletBalance']))
+        (request.auth.uid == userId && incoming().diff(existing()).affectedKeys().hasOnly(['name', 'phone', 'avatar', 'updatedAt', 'idVerification', 'currency', 'selectedCurrency', 'preferredCurrency', 'balances', 'countryCode', 'documentCountry', 'bio', 'businessName', 'serviceArea', 'workingHours', 'hourlyRate', 'location']))
       );
       allow delete: if isAdmin();
     }

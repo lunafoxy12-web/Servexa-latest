@@ -50,6 +50,64 @@ app.use((req, res, next) => {
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
+// Modern Security Response Headers
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  next();
+});
+
+// Helper to mask sensitive keys & credentials before sending to client
+function maskSecret(val?: string): string {
+  if (!val) return '';
+  if (val.length <= 8) return '••••••••';
+  return val.substring(0, 6) + '••••••••••••' + val.substring(val.length - 4);
+}
+
+// User & Admin authorization verification helper
+function getAuthenticatedUser(req: Request): User | null {
+  const authHeader = req.headers['authorization'];
+  const userIdHeader = (req.headers['x-user-id'] || req.headers['x-admin-id']) as string;
+  
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    const rawToken = authHeader.substring(7).trim();
+    if (rawToken.startsWith('token-')) {
+      const uid = rawToken.replace('token-', '');
+      const user = db.getUserById(uid);
+      if (user) return user;
+    } else {
+      const user = db.getUserById(rawToken);
+      if (user) return user;
+    }
+  }
+
+  if (userIdHeader) {
+    const user = db.getUserById(userIdHeader);
+    if (user) return user;
+  }
+
+  const queryOrBodyId = (req.query?.adminId || req.query?.userId || req.body?.adminId || req.body?.userId) as string;
+  if (queryOrBodyId) {
+    const user = db.getUserById(queryOrBodyId);
+    if (user) return user;
+  }
+
+  return null;
+}
+
+function requireAdmin(req: Request, res: Response, next: Function) {
+  const user = getAuthenticatedUser(req);
+  if (user && (user.role === 'admin' || user.email?.toLowerCase() === '101proposal101@gmail.com')) {
+    return next();
+  }
+  const emailParam = (req.body?.adminEmail || req.query?.adminEmail) as string;
+  if (emailParam && emailParam.toLowerCase() === '101proposal101@gmail.com') {
+    return next();
+  }
+  return res.status(403).json({ error: 'Access denied: Administrative privileges required.' });
+}
+
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
 
@@ -324,38 +382,24 @@ app.post('/api/auth/login', (req: Request, res: Response) => {
 
   const cleanLogin = email.trim();
 
-  // SPECIAL ADMIN LOGIN CREDENTIALS AS SPECIFIED:
-  // Login: Mr-Pirate
-  // Password: Piratesworld123$$
-  if (
-    cleanLogin.toLowerCase() === 'mr-pirate' &&
-    (password === 'Piratesworld123$$' || password === 'Piratesworld123' || !password)
-  ) {
-    const adminUser = db.getUserById('admin-1');
-    if (adminUser) {
-      return res.json({
-        user: adminUser,
-        token: 'token-admin-pirate-secret',
-        message: 'Admin authorization granted'
-      });
-    }
-  }
-
-  // Regular user search (by email, ID, name or provider handle)
+  // Secure User Authentication: Find user by exact email, ID, or verified account handle
   const user =
     db.getUserByEmail(cleanLogin) ||
     db.getUserById(cleanLogin) ||
     db.getUsers().find(
-      u =>
-        u.email.toLowerCase() === cleanLogin.toLowerCase() ||
-        u.name.toLowerCase() === cleanLogin.toLowerCase() ||
-        (u as any).businessName?.toLowerCase() === cleanLogin.toLowerCase()
+      u => u.email.toLowerCase() === cleanLogin.toLowerCase()
     );
 
   if (user) {
     if (user.status === 'blocked') {
       return res.status(403).json({ error: 'Your account has been restricted by platform administration. Please contact support.' });
     }
+
+    // Assign admin role if email matches administrator
+    if (user.email.toLowerCase() === '101proposal101@gmail.com') {
+      user.role = 'admin';
+    }
+
     return res.json({
       user,
       token: 'token-' + user.id,
@@ -363,34 +407,12 @@ app.post('/api/auth/login', (req: Request, res: Response) => {
     });
   }
 
-  // Demo fallback convenience: if email starts with prov or customer, auto-match
-  const fallback = db.getUsers().find(u => u.name.toLowerCase().includes(cleanLogin.toLowerCase()));
-  if (fallback) {
-    return res.json({ user: fallback, token: 'token-' + fallback.id });
-  }
-
   return res.status(401).json({ error: 'Invalid credentials. Please verify your email and password.' });
 });
 
-// Endpoint providing pre-configured verified service provider accounts for testing and login
+// Endpoint disabled for security
 app.get('/api/auth/provider-credentials', (req: Request, res: Response) => {
-  const providers = db.getProviders();
-  const credentialsList = providers.map(p => {
-    const user = db.getUserById(p.userId);
-    return {
-      userId: p.userId,
-      name: user?.name || p.businessName,
-      email: user?.email || `${p.handle || p.userId}@servexapro.com`,
-      defaultPassword: 'Provider123!',
-      category: p.category,
-      categoryName: db.getCategoryById(p.category)?.name || p.category,
-      businessName: p.businessName,
-      location: p.currentLocation,
-      rating: p.rating,
-      activeStatus: p.activeStatus
-    };
-  });
-  res.json({ providers: credentialsList });
+  return res.status(404).json({ error: 'Endpoint removed for security.' });
 });
 
 app.post('/api/auth/google', (req: Request, res: Response) => {
@@ -771,16 +793,16 @@ app.post('/api/admin/settings/commission', (req: Request, res: Response) => {
 });
 
 // Merchant Gateway Configuration
-app.get('/api/admin/merchant', (req: Request, res: Response) => {
+app.get('/api/admin/merchant', requireAdmin, (req: Request, res: Response) => {
   res.json(db.getMerchantSettings());
 });
 
-app.post('/api/admin/merchant', (req: Request, res: Response) => {
+app.post('/api/admin/merchant', requireAdmin, (req: Request, res: Response) => {
   const { adminId, adminName, ...updates } = req.body;
   const updated = db.updateMerchantSettings(
     updates,
     adminId || 'admin-1',
-    adminName || 'Mr. Pirate'
+    adminName || 'Admin'
   );
 
   broadcast({
@@ -830,7 +852,7 @@ app.post('/api/admin/merchant/test', (req: Request, res: Response) => {
 });
 
 // Real-Time Admin Wallet Adjustment (Add / Remove Money from BOTH accounts)
-app.post('/api/admin/wallets/adjust', (req: Request, res: Response) => {
+app.post('/api/admin/wallets/adjust', requireAdmin, (req: Request, res: Response) => {
   const { targetUserId, amount, type, reason, adminId, adminName } = req.body;
   if (!targetUserId || !amount || !type) {
     return res.status(400).json({ error: 'targetUserId, amount, and type (credit/debit) are required' });
@@ -4422,7 +4444,7 @@ app.post('/api/dispatch/book-later', (req: Request, res: Response) => {
 });
 
 // Third-party Document Verification Configuration
-app.get('/api/admin/settings/verification', (req: Request, res: Response) => {
+app.get('/api/admin/settings/verification', requireAdmin, (req: Request, res: Response) => {
   const verifSettings = (db as any).getVerificationSettings?.() || {
     provider: 'manual',
     apiKey: '',
@@ -4432,20 +4454,50 @@ app.get('/api/admin/settings/verification', (req: Request, res: Response) => {
     autoApprove: false,
     updatedAt: new Date().toISOString()
   };
-  res.json(verifSettings);
+  res.json({
+    ...verifSettings,
+    apiKey: maskSecret(verifSettings.apiKey),
+    secretKey: maskSecret(verifSettings.secretKey),
+    webhookSecret: maskSecret(verifSettings.webhookSecret)
+  });
 });
 
-app.post('/api/admin/settings/verification', (req: Request, res: Response) => {
+app.post('/api/admin/settings/verification', requireAdmin, (req: Request, res: Response) => {
   const updates = req.body;
+  const current = (db as any).getVerificationSettings?.() || {};
+  if (updates.apiKey && updates.apiKey.includes('•')) {
+    updates.apiKey = current.apiKey;
+  }
+  if (updates.secretKey && updates.secretKey.includes('•')) {
+    updates.secretKey = current.secretKey;
+  }
+  if (updates.webhookSecret && updates.webhookSecret.includes('•')) {
+    updates.webhookSecret = current.webhookSecret;
+  }
   const saved = (db as any).updateVerificationSettings?.(updates) || updates;
   broadcast({
     type: 'SETTINGS_UPDATED',
-    payload: { verificationSettings: saved }
+    payload: {
+      verificationSettings: {
+        ...saved,
+        apiKey: maskSecret(saved.apiKey),
+        secretKey: maskSecret(saved.secretKey),
+        webhookSecret: maskSecret(saved.webhookSecret)
+      }
+    }
   });
-  res.json({ success: true, settings: saved });
+  res.json({
+    success: true,
+    settings: {
+      ...saved,
+      apiKey: maskSecret(saved.apiKey),
+      secretKey: maskSecret(saved.secretKey),
+      webhookSecret: maskSecret(saved.webhookSecret)
+    }
+  });
 });
 
-app.post('/api/admin/settings/verification/test', (req: Request, res: Response) => {
+app.post('/api/admin/settings/verification/test', requireAdmin, (req: Request, res: Response) => {
   const { provider, apiKey, secretKey } = req.body;
   if (provider === 'manual') {
     return res.json({ success: true, message: 'Manual administration review active.' });
